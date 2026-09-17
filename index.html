@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Flores Amarillas</title>
+    <title>Flores para ti 🌻</title>
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -22,66 +23,151 @@
 
         <div class="flor flor1">
             <div class="petalos">
-                <span></span><span></span><span></span>
-                <span></span><span></span><span></span>
-                <span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
             <div class="centro"></div>
             <div class="tallo"></div>
         </div>
 
         <div class="flor flor2">
             <div class="petalos">
-                <span></span><span></span><span></span>
-                <span></span><span></span><span></span>
-                <span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
             <div class="centro"></div>
             <div class="tallo"></div>
         </div>
 
         <div class="flor flor3">
             <div class="petalos">
-                <span></span><span></span><span></span>
-                <span></span><span></span><span></span>
-                <span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
             <div class="centro"></div>
             <div class="tallo"></div>
         </div>
 
         <div class="flor flor4">
             <div class="petalos">
-                <span></span><span></span><span></span>
-                <span></span><span></span><span></span>
-                <span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
             <div class="centro"></div>
             <div class="tallo"></div>
         </div>
 
         <div class="flor flor5">
             <div class="petalos">
-                <span></span><span></span><span></span>
-                <span></span><span></span><span></span>
-                <span></span><span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
-
             <div class="centro"></div>
             <div class="tallo"></div>
         </div>
 
-        <div class="papel"></div>
+        <div class="papel">
+            <button class="corazon" aria-label="Soltar pétalos">
+                ♡
+            </button>
+        </div>
 
         <div class="mensaje">
             Para ti ♡
         </div>
 
     </div>
+
+    <script>
+        const corazon = document.querySelector(".corazon");
+
+        corazon.addEventListener("click", () => {
+
+            for (let i = 0; i < 150; i++) {
+
+                const petalo = document.createElement("div");
+
+                petalo.classList.add("petalo-lluvia");
+
+                petalo.style.left =
+                    Math.random() * 100 + "vw";
+
+                const tamaño =
+                    10 + Math.random() * 25;
+
+                petalo.style.width =
+                    tamaño + "px";
+
+                petalo.style.height =
+                    tamaño * 1.4 + "px";
+
+                const duracion =
+                    3 + Math.random() * 3;
+
+                petalo.style.animationDuration =
+                    duracion + "s";
+
+                petalo.style.animationDelay =
+                    Math.random() * 5.5 + "s";
+
+                petalo.style.setProperty(
+                    "--rotacion",
+                    Math.random() * 360 + "deg"
+                );
+
+                const colores = [
+                    "#ffd21c",
+                    "#ffdc32",
+                    "#ffe45c",
+                    "#fff078",
+                    "#f8c91c"
+                ];
+
+                petalo.style.background =
+                    colores[
+                        Math.floor(
+                            Math.random() * colores.length
+                        )
+                    ];
+
+                document.body.appendChild(petalo);
+
+                setTimeout(() => {
+                    petalo.remove();
+                }, (duracion + 9) * 5000);
+            }
+        });
+    </script>
 
 </body>
 </html>
