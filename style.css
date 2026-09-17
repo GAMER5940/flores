@@ -1,25 +1,28 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-html,
+html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #cac9c9;
+}
+
 body {
     width: 100%;
     height: 100%;
-}
-
-html {
-    background: #8273e1;
-}
-
-body {
     min-height: 100dvh;
+    overflow: hidden;
+    position: relative;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: hidden;
+
     background: linear-gradient(
         to bottom,
         #c58cee 0%,
@@ -31,6 +34,8 @@ body {
 .fuegos {
     position: fixed;
     inset: 0;
+    width: 100%;
+    height: 100%;
     overflow: hidden;
     pointer-events: none;
     z-index: 0;
@@ -144,7 +149,9 @@ body {
     height: 600px;
     flex-shrink: 0;
     z-index: 5;
+
     transform-origin: center center;
+
     transform: scale(
         min(
             calc((100vw - 20px) / 600),
@@ -194,12 +201,14 @@ body {
     height: 360px;
     left: 59px;
     top: 75px;
+
     background: linear-gradient(
         to right,
         #237a32,
         #48a63f,
         #237a32
     );
+
     border-radius: 10px;
     transform-origin: top center;
     z-index: 1;
@@ -242,11 +251,13 @@ body {
     height: 82px;
     left: 37px;
     top: 24px;
+
     background: linear-gradient(
         135deg,
         #fff83b,
         #ffd21c
     );
+
     border-radius: 50% 50% 45% 45%;
     transform-origin: 50% 50%;
 }
@@ -289,13 +300,16 @@ body {
     height: 52px;
     left: 39px;
     top: 39px;
+
     background: radial-gradient(
         circle,
         #8b5700,
         #5c3600
     );
+
     border-radius: 50%;
     z-index: 4;
+
     box-shadow:
         inset 0 0 0 5px #a66a00,
         0 3px 8px rgba(0, 0, 0, .25);
@@ -308,8 +322,10 @@ body {
     height: 8px;
     top: 12px;
     left: 12px;
+
     background: #d89a12;
     border-radius: 50%;
+
     box-shadow:
         17px 4px #d89a12,
         8px 18px #d89a12,
@@ -323,6 +339,7 @@ body {
     height: 190px;
     left: 105px;
     top: 350px;
+
     background:
         linear-gradient(
             105deg,
@@ -338,6 +355,7 @@ body {
             #fffaf0,
             #ead9aa
         );
+
     clip-path: polygon(
         10% 0,
         90% 0,
@@ -345,7 +363,9 @@ body {
         50% 82%,
         0 100%
     );
+
     z-index: 10;
+
     filter: drop-shadow(
         0 8px 8px rgba(0,0,0,.18)
     );
@@ -356,6 +376,7 @@ body {
     position: absolute;
     width: 100%;
     height: 100%;
+
     background:
         linear-gradient(
             75deg,
@@ -377,21 +398,29 @@ body {
     height: 38px;
     left: 50%;
     top: 102px;
+
     transform:
         translateX(-50%)
         rotate(-5deg);
+
     border: none;
     border-radius: 8px;
+
     background: #e7b52e;
     color: #fff8d6;
+
     display: flex;
     align-items: center;
     justify-content: center;
+
     font-size: 21px;
+
     cursor: pointer;
     z-index: 20;
+
     box-shadow:
         0 4px 6px rgba(0,0,0,.2);
+
     transition:
         transform .2s ease,
         filter .2s ease;
@@ -399,6 +428,7 @@ body {
 
 .corazon:hover {
     filter: brightness(1.08);
+
     transform:
         translateX(-50%)
         rotate(5deg)
@@ -416,16 +446,23 @@ body {
     position: absolute;
     left: 50%;
     top: 395px;
+
     transform:
         translateX(-50%)
         rotate(-3deg);
+
     z-index: 12;
+
     font-family:
         "Segoe Script",
         cursive;
+
     font-size: 24px;
+
     color: #8b6500;
+
     white-space: nowrap;
+
     text-shadow:
         1px 1px 2px
         rgba(255,255,255,.8);
@@ -434,12 +471,17 @@ body {
 .petalo-lluvia {
     position: fixed;
     top: -40px;
+
     width: 14px;
     height: 22px;
+
     border-radius: 50% 50% 50% 0;
+
     pointer-events: none;
     z-index: 100;
+
     opacity: 0;
+
     animation:
         caerPetalo
         linear forwards;
@@ -498,3 +540,4 @@ body {
         );
     }
 }
+
