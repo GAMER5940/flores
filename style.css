@@ -4,12 +4,34 @@
     box-sizing: border-box;
 }
 
-body { min-height: 100vh; 
+body {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+
+    margin: 0;
+    padding: 0;
+
+    background: linear-gradient(
+        to bottom,
+        #c58cee 0%,
+        #cac9c9 50%,
+        #8273e1 100%
+    );
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+/*body { min-height: 100vh; 
     background: linear-gradient(#c58cee,#cac9c9, #8273e1); 
     display: flex; 
     justify-content: center; 
     align-items: center; 
-    overflow: hidden; }
+    overflow: hidden; }*/
 
 .fuegos {
     position: fixed;
@@ -513,32 +535,57 @@ body { min-height: 100vh;
     }
 }
 
-@media (max-width: 650px) {
-    body {
-        min-height: 100dvh;
-        height: 100dvh;
-        overflow: hidden;
-    }
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    width: 100%;
+    height: 100dvh;
+    min-height: 100dvh;
+
+    margin: 0;
+    padding: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.ramo {
+    position: relative;
+
+    width: 600px;
+    height: 600px;
+
+    flex-shrink: 0;
+
+    transform-origin: center center;
+
+    transform: scale(
+        min(
+            calc(100vw / 600),
+            calc(100dvh / 600)
+        )
+    );
+}
+
+@media (max-width: 400px) {
 
     .ramo {
-        width: 600px;
-        height: 600px;
         transform: scale(
             min(
-                calc(100vw / 600),
-                calc(100dvh / 600)
+                calc(100vw / 620),
+                calc(100dvh / 620)
             )
         );
-        transform-origin: center center;
     }
 }
 
-@media (max-height: 650px) {
-    body {
-        min-height: 100dvh;
-        height: 100dvh;
-        overflow: hidden;
-    }
+@media (min-width: 600px) and (max-width: 1000px) {
 
     .ramo {
         transform: scale(
@@ -547,7 +594,6 @@ body { min-height: 100vh;
                 calc(100dvh / 600)
             )
         );
-        transform-origin: center center;
     }
 }
 
