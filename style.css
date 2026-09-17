@@ -514,6 +514,45 @@ body { min-height: 100vh;
 }
 
 @media (max-width: 650px) {
+    body {
+        min-height: 100dvh;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .ramo {
+        width: 600px;
+        height: 600px;
+        transform: scale(
+            min(
+                calc(100vw / 600),
+                calc(100dvh / 600)
+            )
+        );
+        transform-origin: center center;
+    }
+}
+
+@media (max-height: 650px) {
+    body {
+        min-height: 100dvh;
+        height: 100dvh;
+        overflow: hidden;
+    }
+
+    .ramo {
+        transform: scale(
+            min(
+                calc(100vw / 600),
+                calc(100dvh / 600)
+            )
+        );
+        transform-origin: center center;
+    }
+}
+
+
+/*@media (max-width: 650px) {
 
     .ramo {
         transform: scale(.75);
@@ -527,4 +566,4 @@ body { min-height: 100vh;
         transform: scale(.75);
     }
 
-}
+}*/
