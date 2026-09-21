@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Flores para ti 🌻</title>
     <link rel="stylesheet" href="style.css">
 </head>
@@ -113,60 +113,55 @@
 
         corazon.addEventListener("click", () => {
 
-            for (let i = 0; i < 150; i++) {
+        for (let i = 0; i < 150; i++) {
 
-                const petalo = document.createElement("div");
+        const petalo = document.createElement("div");
 
-                petalo.classList.add("petalo-lluvia");
+        petalo.classList.add("petalo-lluvia");
 
-                petalo.style.left =
-                    Math.random() * 100 + "vw";
+        petalo.style.left =
+            Math.random() * 100 + "%";
 
-                const tamaño =
-                    10 + Math.random() * 25;
+        const tamaño =
+            10 + Math.random() * 25;
 
-                petalo.style.width =
-                    tamaño + "px";
+        petalo.style.width =
+            tamaño + "px";
 
-                petalo.style.height =
-                    tamaño * 1.4 + "px";
+        petalo.style.height =
+            tamaño * 1.4 + "px";
 
-                const duracion =
-                    3 + Math.random() * 3;
+        const duracion =
+            3 + Math.random() * 3;
 
-                petalo.style.animationDuration =
-                    duracion + "s";
+        petalo.style.animationDuration =
+            duracion + "s";
 
-                petalo.style.animationDelay =
-                    Math.random() * 5.5 + "s";
+        petalo.style.animationDelay =
+            Math.random() * 5.5 + "s";
 
-                petalo.style.setProperty(
-                    "--rotacion",
-                    Math.random() * 360 + "deg"
-                );
+        const colores = [
+            "#ffd21c",
+            "#ffdc32",
+            "#ffe45c",
+            "#fff078",
+            "#f8c91c"
+        ];
 
-                const colores = [
-                    "#ffd21c",
-                    "#ffdc32",
-                    "#ffe45c",
-                    "#fff078",
-                    "#f8c91c"
-                ];
+        petalo.style.background =
+            colores[
+                Math.floor(
+                    Math.random() * colores.length
+                )
+            ];
 
-                petalo.style.background =
-                    colores[
-                        Math.floor(
-                            Math.random() * colores.length
-                        )
-                    ];
+        document.body.appendChild(petalo);
 
-                document.body.appendChild(petalo);
-
-                setTimeout(() => {
-                    petalo.remove();
-                }, (duracion + 9) * 5000);
-            }
-        });
+        setTimeout(() => {
+            petalo.remove();
+        }, (duracion + 6) * 1000);
+    }
+    });
     </script>
 
 </body>
